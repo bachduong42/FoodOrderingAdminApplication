@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="authentication_screen_til_marginTopBottom">10dp</dimen>
+    <dimen name="authentication_screen_til_marginStartEnd">20dp</dimen>
+    <dimen name="et_text_size">16sp</dimen>
+    <dimen name="corner_radius">15dp</dimen>
+    <dimen name="margin_top_tvNameApp">40dp</dimen>
+    <dimen name="margin_top_image_view">100dp</dimen>
+
+
+    <dimen name="text_size_tv_name_app">40sp</dimen>
+    <dimen name="text_size_tv_14">14sp</dimen>
+    <dimen name="text_size_tv_20">20sp</dimen>
+    <dimen name="margin_top_signIn_signUp">20dp</dimen>
+</resources>
