@@ -398,97 +398,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardView6">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btn_money_on_holed"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/item_red"
-            >
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/baseline_monetization_on_24"
-                app:tint="@color/text_color"></ImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Money On Holed"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/text_color"
-                app:layout_constraintEnd_toEndOf="@+id/imageView15"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView15"></TextView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView8"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="48dp"
-        android:background="#facbbf"
-        android:outlineSpotShadowColor="@color/black"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView6">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btn_create_user"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/item_red"
-            >
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/baseline_person_add_alt_1_24"
-                app:tint="@color/text_color"></ImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Create New User"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/text_color"
-                app:layout_constraintEnd_toEndOf="@+id/imageView16"
-                app:layout_constraintStart_toStartOf="@+id/imageView16"
-                app:layout_constraintTop_toBottomOf="@+id/imageView16"></TextView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-    x
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView9"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:background="#facbbf"
-        android:outlineSpotShadowColor="@color/black"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView8"
-        app:layout_constraintTop_toTopOf="@+id/cardView8">
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_log_out"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/item_red"
             >
             <ImageView
-                android:id="@+id/imageView17"
+                android:id="@+id/imageView15"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
@@ -502,14 +418,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Log Out"
+                android:text="Log out"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/text_color"
-                app:layout_constraintEnd_toEndOf="@+id/imageView17"
-                app:layout_constraintStart_toStartOf="@+id/imageView17"
-                app:layout_constraintTop_toBottomOf="@+id/imageView17"></TextView>
+                app:layout_constraintEnd_toEndOf="@+id/imageView15"
+                app:layout_constraintStart_toStartOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/imageView15"></TextView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
