@@ -28,15 +28,18 @@ class DeliveryAdapter(private val customerNames: ArrayList<String>, private val 
         fun bind(position: Int) {
             bingding.apply {
                 customerName.text= customerNames[position]
-                customerStatus.text= moneyStatus[position]
+                if(moneyStatus[position]){
+                    customerStatus.text = "Received"
+                } else{
+                    customerStatus.text = "NotReceived"
+                }
                 val colorMap = mapOf(
-                    "Received" to Color.parseColor("#4BFF93"), "Not Received" to Color.parseColor("#FF4B4B"), "Pending" to Color.parseColor("#a3a3a7")
+                    true to Color.parseColor("#4BFF93"), false to Color.parseColor("#FF4B4B")
                 )
                 customerStatus.setTextColor(colorMap[moneyStatus[position]]?: Color.BLACK)
                 when (moneyStatus[position]) {
-                    "Received" -> imageView.setImageResource(R.drawable.baseline_file_download_done_24)
-                    "Not Received" -> imageView.setImageResource(R.drawable.baseline_airport_shuttle_24)
-                    "Pending" -> imageView.setImageResource(R.drawable.baseline_pending_actions_24)
+                    true -> {imageView.setImageResource(R.drawable.baseline_file_download_done_24)}
+                    false -> imageView.setImageResource(R.drawable.baseline_airport_shuttle_24)
                 }
             }
         }
