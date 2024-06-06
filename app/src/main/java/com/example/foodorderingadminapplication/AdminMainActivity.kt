@@ -39,7 +39,18 @@ class AdminMainActivity : AppCompatActivity() {
             val intent = Intent(this,AddItemAdmin::class.java)
             startActivity(intent)
         }
-
+        binding.btnAllItem.setOnClickListener{
+            val intent = Intent(this,AllItemActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnOutForDelivery.setOnClickListener{
+            val intent = Intent(this,OutForDeliveryActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnProfile.setOnClickListener{
+            val intent = Intent(this,AdminProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun getDataUserFromDatabase(uid: String, callback: (UserModel?) -> Unit) {
         val db = FirebaseDatabase.getInstance()
