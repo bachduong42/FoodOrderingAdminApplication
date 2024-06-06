@@ -19,11 +19,6 @@ class AddItemAdmin : AppCompatActivity() {
             finish();
         }
     }
-    val pickImage = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri ->
-        if(uri!=null){
-            binding.selectedImage.setImageURI(uri);
-        }
 
-    }
 
 }
