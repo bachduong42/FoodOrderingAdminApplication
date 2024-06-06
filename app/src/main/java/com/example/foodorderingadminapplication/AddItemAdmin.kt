@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.foodorderingadminapplication.databinding.ActivityAddItemAdminBinding
+import com.example.foodorderingadminapplication.model.AllMenu
 
 class AddItemAdmin : AppCompatActivity() {
     private val binding:ActivityAddItemAdminBinding by lazy {
@@ -39,7 +40,41 @@ class AddItemAdmin : AppCompatActivity() {
             finish();
         }
     }
+    private fun uploadData() {
+        // get a reference to the "menu" node in the database
+        val menuRef = database.getReference("menu")
+        // generate a unique key for the new menu item
+        val newItemKey = menuRef.push().key
+        if(foodImage !=null){
+            val storageRef = FirebaseStorage.getInstance().reference
+            val imageRef = storageRef.child("menu_images/${newItemKey}.ipg")
+            val uploadTask = imageRef.putFile(foodImage!!)
 
+            uploadTask.addOnSuccessListener {
+                imageRef.downloadUrl.addOnSuccessListener {
+                        downloadUri ->
+                    // create new item
+                    val newItem = AllMenu(
+                        foodName,foodPrice,foodDescription,downloadUri.toString(),foodIngredient
+                    )
+                    newItemKey?.let{
+                            key ->
+                        menuRef.child(key).setValue(newItem).addOnSuccessListener {
+                            Toast.makeText(this,"Data upload successfully!", Toast.LENGTH_LONG).show()
+                        }
+                            .addOnFailureListener {
+                                Toast.makeText(this,"Data upload Failed!", Toast.LENGTH_LONG).show()
+                            }
+                    }
+                }
+                    .addOnFailureListener {
+                        Toast.makeText(this,"Image upload Failed!", Toast.LENGTH_LONG).show()
+                    }
+            }
+        } else{
+            Toast.makeText(this,"Please select image", Toast.LENGTH_LONG).show()
+        }
+    }
     val pickImage = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri ->
         if(uri!=null){
             binding.selectedImage.setImageURI(uri);
