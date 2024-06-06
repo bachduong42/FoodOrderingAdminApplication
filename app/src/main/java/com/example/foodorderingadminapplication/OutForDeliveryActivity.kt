@@ -8,11 +8,5 @@ class OutForDeliveryActivity : AppCompatActivity() {
     private val binding: ActivityOutForDeliveryBinding by lazy{
         ActivityOutForDeliveryBinding.inflate(layoutInflater)
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-        binding.btnBack.setOnClickListener{
-            finish()
-        }
-    }
+
 }
