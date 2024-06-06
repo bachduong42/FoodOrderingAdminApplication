@@ -15,12 +15,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class AllItemActivity : AppCompatActivity() {
-
     private lateinit var databaseReference: DatabaseReference
     private lateinit var database: FirebaseDatabase
     private var menuItems: ArrayList<AllMenu> = ArrayList()
     private lateinit var userModel: UserModel
-
     private val binding: ActivityAllItemBinding by lazy{
         ActivityAllItemBinding.inflate(layoutInflater)
     }
@@ -30,7 +28,6 @@ class AllItemActivity : AppCompatActivity() {
 
         var user = intent.getParcelableExtra<UserModel>("user")
         userModel = UserModel(user?.email, user?.name,user?.nameOfRestaurant, user?.password)
-
         databaseReference = FirebaseDatabase.getInstance().reference
         retrivieveMenuItem()
 
@@ -66,7 +63,6 @@ class AllItemActivity : AppCompatActivity() {
     private fun setAdapter() {
 
         val adapter = MenuItemAdapter(menuItems,this@AllItemActivity,databaseReference, userModel.nameOfRestaurant!!)
-
         binding.rvItems.layoutManager= LinearLayoutManager(this)
         binding.rvItems.adapter= adapter
     }

@@ -36,14 +36,12 @@ class AddItemAdapter(private val MenuItemName: ArrayList<String>, private val Me
                 }
             }
         }
-
         private fun increaseQuantities(position: Int) {
             if(itemQuantities[position]<10){
                 itemQuantities[position]++
                 binding.tvNumber.text= itemQuantities[position].toString()
             }
         }
-
         private fun decreaseQuantities(position: Int) {
             if(itemQuantities[position]>1){
                 itemQuantities[position]--

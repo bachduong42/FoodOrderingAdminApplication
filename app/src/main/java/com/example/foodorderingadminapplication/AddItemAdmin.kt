@@ -13,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 
 class AddItemAdmin : AppCompatActivity() {
-
     //food items detail
     private lateinit var foodName: String
     private lateinit var foodPrice: String
@@ -23,8 +22,6 @@ class AddItemAdmin : AppCompatActivity() {
     //firebase
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
-
-
     private val binding:ActivityAddItemAdminBinding by lazy {
         ActivityAddItemAdminBinding.inflate(layoutInflater);
     }
@@ -53,13 +50,10 @@ class AddItemAdmin : AppCompatActivity() {
         binding.btnSelectImage.setOnClickListener {
             pickImage.launch("image/*")
         }
-
-
         binding.btnBack.setOnClickListener{
             finish();
         }
     }
-
     private fun uploadData() {
         // get a reference to the "menu" node in the database
         val menuRef = database.getReference("menu")
@@ -69,7 +63,6 @@ class AddItemAdmin : AppCompatActivity() {
             val storageRef = FirebaseStorage.getInstance().reference
             val imageRef = storageRef.child("menu_images/${newItemKey}.ipg")
             val uploadTask = imageRef.putFile(foodImage!!)
-
             uploadTask.addOnSuccessListener {
                 imageRef.downloadUrl.addOnSuccessListener {
                         downloadUri ->
@@ -101,7 +94,5 @@ class AddItemAdmin : AppCompatActivity() {
             binding.selectedImage.setImageURI(uri);
             foodImage = uri
         }
-
     }
-
 }

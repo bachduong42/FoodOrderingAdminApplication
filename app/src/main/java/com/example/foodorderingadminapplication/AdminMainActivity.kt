@@ -55,7 +55,6 @@ class AdminMainActivity : AppCompatActivity() {
     private fun getDataUserFromDatabase(uid: String, callback: (UserModel?) -> Unit) {
         val db = FirebaseDatabase.getInstance()
         val userRef = db.getReference("user").child(uid)
-
         userRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val userModel: UserModel? = if (dataSnapshot.exists()) {
@@ -64,8 +63,6 @@ class AdminMainActivity : AppCompatActivity() {
                     val email = dataSnapshot.child("email").getValue(String::class.java)
                     val password = dataSnapshot.child("password").getValue(String::class.java)
                     UserModel(name, nameOfRestaurant, email, password)
-
-
                 } else {
                     null
                 }
