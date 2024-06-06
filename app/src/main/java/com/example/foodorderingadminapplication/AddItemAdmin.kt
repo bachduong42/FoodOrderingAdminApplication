@@ -31,9 +31,10 @@ class AddItemAdmin : AppCompatActivity() {
                 Toast.makeText(this,"Item add successfully!", Toast.LENGTH_LONG).show()
             }
         }
-        binding.selectedImage.setOnClickListener {
-            pickImage.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly));
+        binding.btnSelectImage.setOnClickListener {
+            pickImage.launch("image/*")
         }
+
         binding.btnBack.setOnClickListener{
             finish();
         }
