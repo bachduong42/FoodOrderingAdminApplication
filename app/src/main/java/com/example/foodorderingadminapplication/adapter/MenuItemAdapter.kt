@@ -12,8 +12,8 @@ import com.example.foodorderingadminapplication.model.AllMenu
 import com.google.firebase.database.DatabaseReference
 
 class MenuItemAdapter(private var item: ArrayList<AllMenu>,
-    private val context: Context,
-    private var databaseReference: DatabaseReference,
+                      private val context: Context,
+                      private var databaseReference: DatabaseReference,
                       private val nameOfRestaurant: String)
     : RecyclerView.Adapter<MenuItemAdapter.AddItemViewHolder>() {
     private val itemQuantities = IntArray(item.size){1}
