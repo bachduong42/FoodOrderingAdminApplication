@@ -12,6 +12,10 @@ class AddItemAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root);
+        //initialize FireBase
+        auth = FirebaseAuth.getInstance()
+        //initialize FireBase database instance
+        database = FirebaseDatabase.getInstance()
         binding.selectedImage.setOnClickListener {
             pickImage.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly));
         }
