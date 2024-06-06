@@ -75,10 +75,12 @@ class AddItemAdmin : AppCompatActivity() {
             Toast.makeText(this,"Please select image", Toast.LENGTH_LONG).show()
         }
     }
-    val pickImage = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri ->
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()){ uri ->
         if(uri!=null){
             binding.selectedImage.setImageURI(uri);
+            foodImage = uri
         }
 
     }
+
 }
