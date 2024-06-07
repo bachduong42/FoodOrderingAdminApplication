@@ -5,6 +5,12 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.foodorderingadminapplication.databinding.ActivityAdminProfileBinding
 import com.example.foodorderingadminapplication.model.UserModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class AdminProfileActivity : AppCompatActivity() {
     private val binding: ActivityAdminProfileBinding by lazy{
@@ -33,7 +39,7 @@ class AdminProfileActivity : AppCompatActivity() {
         retrieveUserData()
     }
     private fun retrieveUserData() {
-        adminReference.addListenerForSingleValueEvent(object : ValueEventListener{
+        adminReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
                     var ownerName = snapshot.child("name").getValue(String::class.java)

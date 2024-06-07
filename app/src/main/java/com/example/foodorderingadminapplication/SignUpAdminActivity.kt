@@ -10,7 +10,6 @@ import com.example.foodorderingadminapplication.databinding.ActivitySignUpAdminB
 import com.example.foodorderingadminapplication.model.UserModel
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
