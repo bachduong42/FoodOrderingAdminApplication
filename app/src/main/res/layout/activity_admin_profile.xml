@@ -369,7 +369,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_signup_admin"
+        android:id="@+id/btn_save_infor"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_button_rounded"
