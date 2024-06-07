@@ -113,7 +113,19 @@ class PendingOrderActivity : AppCompatActivity(), PendingOrderAdapter.OnItemClic
 
 
     override fun onItemDispatchClickListener(position: Int) {
-        TODO("Not yet implemented")
+        val dispatchItemPushKey = listOfOrderItem[position].itemPushKey
+        val dispatchItemOrderReference = database.reference.child("CompleteOrder").child(dispatchItemPushKey!!)
+        dispatchItemOrderReference.setValue(listOfOrderItem[position])
+            .addOnSuccessListener {
+                deleteThisItemFromOrderDetails(dispatchItemPushKey)
+            }
     }
+    private fun  deleteThisItemFromOrderDetails(dispatchItemPushKey: String){
+        val orderDetailsItemsReference = database.reference.child("OrderDetails").child(dispatchItemPushKey)
+        orderDetailsItemsReference.removeValue()
+            .addOnSuccessListener {
+                Toast.makeText(this, "Order is dispatched", Toast.LENGTH_SHORT).show()
 
+            }.addOnFailureListener { Toast.makeText(this, "Order is not dispatched", Toast.LENGTH_SHORT).show() }
+    }
 }
