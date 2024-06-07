@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.foodorderingadminapplication.LoginAdminActivity
 import com.example.foodorderingadminapplication.R
 import com.example.foodorderingadminapplication.databinding.ActivitySignUpAdminBinding
+import com.example.foodorderingadminapplication.model.UserModel
 
 class SignUpAdminActivity : AppCompatActivity() {
 
@@ -58,6 +59,16 @@ class SignUpAdminActivity : AppCompatActivity() {
                 Log.d("Account","createAccount: Failure", it.exception)
             }
         }
+    }
+
+    private fun saveUserData() {
+        email = binding.etEmail.text.toString().trim()
+        password = binding.etPassword.text.toString().trim()
+        userName = binding.etNameOwner.text.toString().trim()
+        nameOfRestaurant = binding.etNameRestaurant.text.toString().trim()
+        val user = UserModel(userName, nameOfRestaurant, email, password)
+        val userId: String = FirebaseAuth.getInstance().currentUser!!.uid
+        database.child("user").child(userId).setValue(user)
     }
 
 }
