@@ -26,8 +26,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
-import com.midterm.foododeringapp.SignUpAdminActivity
-
 class LoginAdminActivity : AppCompatActivity() {
 
     private var binding: ActivityLoginAdminBinding? = null

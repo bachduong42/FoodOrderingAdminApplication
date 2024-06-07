@@ -14,7 +14,7 @@
         android:scaleType="centerCrop"
         android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
         android:contentDescription="button back"
-        android:src="@drawable/baseline_arrow_back_24"
+        android:src="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView

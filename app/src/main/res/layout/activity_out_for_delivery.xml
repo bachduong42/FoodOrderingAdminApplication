@@ -7,10 +7,11 @@
     tools:context=".OutForDeliveryActivity">
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/baseline_arrow_back_24"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/arrow_back"
         android:scaleType="centerCrop"
         android:contentDescription="button back"
         app:layout_constraintStart_toStartOf="parent"
