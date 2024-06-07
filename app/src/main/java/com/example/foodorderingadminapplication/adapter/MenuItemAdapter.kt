@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodorderingadminapplication.databinding.ItemItemBinding
-import com.example.foodorderingadminapplication.model.AllMenu
 import com.google.firebase.database.DatabaseReference
 
 class MenuItemAdapter(private var item: ArrayList<AllMenu>,

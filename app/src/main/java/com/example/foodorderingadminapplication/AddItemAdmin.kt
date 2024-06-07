@@ -2,10 +2,8 @@ package com.example.foodorderingadminapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.foodorderingadminapplication.databinding.ActivityAddItemAdminBinding
-import com.example.foodorderingadminapplication.model.AllMenu
 
 class AddItemAdmin : AppCompatActivity() {
     private val binding:ActivityAddItemAdminBinding by lazy {

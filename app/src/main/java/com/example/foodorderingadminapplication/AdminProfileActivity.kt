@@ -30,6 +30,24 @@ class AdminProfileActivity : AppCompatActivity() {
         }
         retrieveUserData()
     }
+    private fun retrieveUserData() {
+        adminReference.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    var ownerName = snapshot.child("name").getValue(String::class.java)
+                    var email = snapshot.child("email").getValue(String::class.java)
+                    var password = snapshot.child("password").getValue(String::class.java)
+                    var address = snapshot.child("address").getValue(String::class.java)
+                    var phone = snapshot.child("phone").getValue(String::class.java)
+                    setDataToTextView(ownerName,email,password,address,phone)
+                }
+            }
 
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
 
 }
