@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AdminMainActivity">
 
     <ImageView
@@ -50,34 +51,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="8dp"></androidx.constraintlayout.widget.Guideline>
+                app:layout_constraintGuide_begin="8dp"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="8dp"></androidx.constraintlayout.widget.Guideline>
+                app:layout_constraintGuide_begin="8dp"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="8dp"></androidx.constraintlayout.widget.Guideline>
+                app:layout_constraintGuide_end="8dp"/>
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_info_outline_24"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintBottom_toTopOf="@+id/tvPendingOrder"
+                app:layout_constraintEnd_toEndOf="@+id/tvPendingOrder"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
-
+                app:layout_constraintTop_toTopOf="parent"/>
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvPendingOrder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/yesteryear_regular"
@@ -86,9 +86,10 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
+                android:id="@+id/tvPendingItemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
@@ -96,9 +97,9 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="@+id/tvPendingOrder"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/tvPendingOrder"/>
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -108,7 +109,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView11"
                 app:layout_constraintEnd_toEndOf="@+id/textView11"
                 app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/textView11"
@@ -120,10 +121,11 @@
                 android:textColor="@color/text_color"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
+                app:layout_constraintStart_toEndOf="@+id/tvPendingOrder"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
+                android:id="@+id/tvCompletedItemCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
@@ -133,7 +135,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textView11"
                 app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/textView11"/>
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -143,7 +145,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView12"
                 app:layout_constraintEnd_toStartOf="@+id/guideline4"
                 app:layout_constraintStart_toStartOf="@+id/textView12"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/textView12"
@@ -156,9 +158,10 @@
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView11"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
+                android:id="@+id/tvWholeTimeEarning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
@@ -170,7 +173,7 @@
                 app:layout_constraintHorizontal_bias="0.453"
                 app:layout_constraintStart_toStartOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/textView12"
-                app:layout_constraintVertical_bias="0.428"></TextView>
+                app:layout_constraintVertical_bias="0.428"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -201,7 +204,7 @@
                 android:src="@drawable/baseline_add_circle_outline_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/textView13"
@@ -213,7 +216,7 @@
                 android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="@+id/imageView10"
                 app:layout_constraintStart_toStartOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/imageView10"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/imageView10"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -243,7 +246,7 @@
                 android:src="@drawable/baseline_feed_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></ImageView>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/textView15"
@@ -255,7 +258,7 @@
                 android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="@+id/imageView13"
                 app:layout_constraintStart_toStartOf="@+id/imageView13"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/imageView13"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -286,7 +289,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/text_color"></ImageView>
+                app:tint="@color/text_color"/>
 
             <TextView
                 android:id="@+id/textView14"
@@ -298,7 +301,7 @@
                 android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="@+id/btn_out_for_delivery"
                 app:layout_constraintStart_toStartOf="@+id/btn_out_for_delivery"
-                app:layout_constraintTop_toBottomOf="@+id/btn_out_for_delivery"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/btn_out_for_delivery"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -326,7 +329,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/baseline_remove_red_eye_24"></ImageView>
+                android:src="@drawable/baseline_remove_red_eye_24"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -337,7 +340,7 @@
                 android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="@+id/imageView11"
                 app:layout_constraintStart_toStartOf="@+id/imageView11"
-                app:layout_constraintTop_toBottomOf="@+id/imageView11"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/imageView11"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -369,7 +372,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/baseline_person_pin_24"></ImageView>
+                android:src="@drawable/baseline_person_pin_24"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -380,7 +383,7 @@
                 android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="@+id/imageView14"
                 app:layout_constraintStart_toStartOf="@+id/imageView14"
-                app:layout_constraintTop_toBottomOf="@+id/imageView14"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/imageView14"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -412,7 +415,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:src="@drawable/baseline_logout_24"
-                app:tint="@color/text_color"></ImageView>
+                app:tint="@color/text_color"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -423,7 +426,7 @@
                 android:textColor="@color/text_color"
                 app:layout_constraintEnd_toEndOf="@+id/imageView15"
                 app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView15"></TextView>
+                app:layout_constraintTop_toBottomOf="@+id/imageView15"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

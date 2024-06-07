@@ -7,13 +7,17 @@ import android.util.Log
 import com.example.foodorderingadminapplication.databinding.ActivityAdminMainBinding
 import com.example.foodorderingadminapplication.model.AllMenu
 import com.example.foodorderingadminapplication.model.UserModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class AdminMainActivity : AppCompatActivity() {
-
+    private lateinit var database: FirebaseDatabase
+    private lateinit var auth: FirebaseAuth
+    private lateinit var completedOrderReference: DatabaseReference
 
     private val binding: ActivityAdminMainBinding by lazy{
         ActivityAdminMainBinding.inflate(layoutInflater)
@@ -39,10 +43,7 @@ class AdminMainActivity : AppCompatActivity() {
             val intent = Intent(this,AddItemAdmin::class.java)
             startActivity(intent)
         }
-        binding.btnAllItem.setOnClickListener{
-            val intent = Intent(this,AllItemActivity::class.java)
-            startActivity(intent)
-        }
+
         binding.btnOutForDelivery.setOnClickListener{
             val intent = Intent(this,OutForDeliveryActivity::class.java)
             startActivity(intent)
@@ -51,7 +52,11 @@ class AdminMainActivity : AppCompatActivity() {
             val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
         }
+
+
+
     }
+
     private fun getDataUserFromDatabase(uid: String, callback: (UserModel?) -> Unit) {
         val db = FirebaseDatabase.getInstance()
         val userRef = db.getReference("user").child(uid)

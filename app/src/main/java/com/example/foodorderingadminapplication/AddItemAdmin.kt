@@ -50,6 +50,8 @@ class AddItemAdmin : AppCompatActivity() {
         binding.btnSelectImage.setOnClickListener {
             pickImage.launch("image/*")
         }
+
+
         binding.btnBack.setOnClickListener{
             finish();
         }
@@ -63,6 +65,7 @@ class AddItemAdmin : AppCompatActivity() {
             val storageRef = FirebaseStorage.getInstance().reference
             val imageRef = storageRef.child("menu_images/${newItemKey}.ipg")
             val uploadTask = imageRef.putFile(foodImage!!)
+
             uploadTask.addOnSuccessListener {
                 imageRef.downloadUrl.addOnSuccessListener {
                         downloadUri ->
