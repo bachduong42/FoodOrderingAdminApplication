@@ -39,7 +39,7 @@ class AdminProfileActivity : AppCompatActivity() {
         retrieveUserData()
     }
     private fun retrieveUserData() {
-        adminReference.addListenerForSingleValueEvent(object : ValueEventListener{
+        adminReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
                     var ownerName = snapshot.child("name").getValue(String::class.java)

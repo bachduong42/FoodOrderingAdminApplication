@@ -1,12 +1,11 @@
-package com.midterm.foododeringapp
+package com.example.foodorderingadminapplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.Data
 import android.util.Log
 import android.widget.Toast
-import com.example.foodorderingadminapplication.LoginAdminActivity
-import com.example.foodorderingadminapplication.R
 import com.example.foodorderingadminapplication.databinding.ActivitySignUpAdminBinding
 import com.example.foodorderingadminapplication.model.UserModel
 import com.google.firebase.Firebase
@@ -50,6 +49,7 @@ class SignUpAdminActivity : AppCompatActivity() {
         }
 
     }
+
     private fun createAccount(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if(it.isSuccessful){
@@ -75,5 +75,4 @@ class SignUpAdminActivity : AppCompatActivity() {
         val userId: String = FirebaseAuth.getInstance().currentUser!!.uid
         database.child("user").child(userId).setValue(user)
     }
-
 }

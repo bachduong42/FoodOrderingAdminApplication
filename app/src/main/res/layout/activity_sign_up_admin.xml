@@ -43,12 +43,15 @@
         android:id="@+id/tv_choose_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/authentication_screen_til_marginTopBottom"
         android:fontFamily="@font/poppins_semibold"
         android:text="Choose Your Location "
         android:textColor="#BE1515"
         android:textSize="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:layout_editor_absoluteX="20dp"
-        app:layout_editor_absoluteY="234dp"/>
+        app:layout_editor_absoluteY="234dp"
+        tools:layout_editor_absoluteX="20dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
@@ -72,6 +75,7 @@
             android:id="@+id/list_of_location"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/authentication_screen_til_marginTopBottom"
             android:backgroundTint="#40FFFFFF"
             android:hint="Choose Location"
             android:inputType="none"
@@ -229,5 +233,6 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_signup_admin"
         app:layout_constraintStart_toStartOf="@+id/btn_signup_admin"
         app:layout_constraintTop_toBottomOf="@+id/btn_signup_admin" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
