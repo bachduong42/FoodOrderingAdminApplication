@@ -49,5 +49,18 @@ class AdminProfileActivity : AppCompatActivity() {
 
         })
     }
+    private fun setDataToTextView(
+        ownerName: String?,
+        email: String?,
+        password: String?,
+        address: String?,
+        phone: String?
+    ) {
+        binding.etNameOwner.setText(ownerName)
+        binding.etEmailOwner.setText(email)
+        binding.etPasswordOwner.setText(password)
+        binding.etAddressOwner.setText(address)
+        binding.etPhoneOwner.setText(phone)
+    }
 
 }
