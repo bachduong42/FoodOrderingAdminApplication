@@ -86,12 +86,31 @@ class PendingOrderActivity : AppCompatActivity(), PendingOrderAdapter.OnItemClic
     }
 
     override fun onItemClickListener(position: Int) {
-        TODO("Not yet implemented")
+        val intent = Intent(this, OrderDetailsActivity::class.java)
+        val userOrderDetails = listOfOrderItem[position]
+        intent.putExtra("userOrderDetails",userOrderDetails)
+        startActivity(intent)
     }
 
     override fun onItemAcceptClickListener(position: Int) {
-        TODO("Not yet implemented")
+        // handle item accept and update database
+        val childItemPushKey = listOfOrderItem[position].itemPushKey
+        val clickItemOrderReference = childItemPushKey?.let{
+            database.reference.child("OrderDetails").child(it)
+        }
+        clickItemOrderReference?.child("orderAccepted")?.setValue(true)
+        updateOrderAcceptStatus(position)
     }
+    private fun updateOrderAcceptStatus(position: Int){
+        // update order acceptance iin user's Buy History and OrderDetails
+        val userIdOfClickedItem = listOfOrderItem[position].userUid
+        val pushKeyOfClickedItem = listOfOrderItem[position].itemPushKey
+        val buyHistoryReference = database.reference.child("user").child(userIdOfClickedItem!!).child("BuyHistory")
+            .child(pushKeyOfClickedItem!!)
+        buyHistoryReference.child("orderAccepted").setValue(true)
+        databaseOrderDetails.child(pushKeyOfClickedItem).child("orderAccepted").setValue(true)
+    }
+
 
     override fun onItemDispatchClickListener(position: Int) {
         TODO("Not yet implemented")
